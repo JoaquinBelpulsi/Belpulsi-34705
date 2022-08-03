@@ -1,14 +1,18 @@
 import CartWidget from "./CartWidget"
 import NavBar from "./NavBar"
+import ItemCount from "./ItemCount"
 
-const Header = ({contador}) => {
+const Header = () => {
     return (
         <header>
-            <p>El contador va : {contador}</p>
-            <CartWidget 
-                type="header"
+            <CartWidget
+                type = "header"
             />
             <NavBar/>
+            <ItemCount
+                type= "botones"
+                
+            />
         </header>
     )
 }
