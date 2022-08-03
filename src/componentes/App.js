@@ -16,7 +16,6 @@ function App(){
         <>
             <Header/>
             <ItemListContainer/>
-            {/* <ItemCount/> */}
             <Footer/>
         </>
     )
