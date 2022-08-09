@@ -8,11 +8,9 @@ function App(){
         <>
         <main id="Inicio">
             <Header
-                
             />
                 <ItemListContainer/>
             <Footer
-
             />
         </main>
         </>

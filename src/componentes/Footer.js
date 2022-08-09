@@ -5,11 +5,10 @@ import Merca from "./multimedia/medotos_pago/mercadopago.png"
 import Pago from "./multimedia/medotos_pago/pagofacil.png"
 import Rapi from "./multimedia/medotos_pago/rapipag.png"
 
-import ItemCount from "./ItemCount"
-
 function Footer() {
 return (
 <>
+
     <footer>
         <div class="container">
             <div class="row">
@@ -51,7 +50,7 @@ return (
                     <div class="mapa">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13140.332380383776!2d-58.57001712629588!3d-34.57676393746106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb9dbbf9a9389%3A0xaa20a7f33f23f351!2sVilla%20Bonich%2C%20Billinghurst%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1646773915131!5m2!1ses!2sar"
-                            width="250" height="250" allowfullscreen="" loading="lazy"
+                            width="250" height="250" loading="lazy"
                             title="Mapa Villa Bonich"></iframe>
                     </div>
 
@@ -99,11 +98,6 @@ return (
             </div>
         </div>
     </footer>
-
-    <ItemCount
-        type = "botones"
-        
-    />
 
 </>
 )
