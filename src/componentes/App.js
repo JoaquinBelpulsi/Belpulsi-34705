@@ -1,19 +1,17 @@
 import Header from "./Header"
 import ItemListContainer from "./ItemListContainer"
 import Footer from "./Footer"
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App(){
-
     return (
-        <>
-        <main id="Inicio">
-            <Header
-            />
+            <ChakraProvider>
+
+            <Header/>
                 <ItemListContainer/>
-            <Footer
-            />
-        </main>
-        </>
+            <Footer/>
+
+            </ChakraProvider>
     )
 }
 
