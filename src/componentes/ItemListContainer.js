@@ -3,19 +3,31 @@ import ItemList from "./ItemList";
 import { productos } from "../productos/productos";
 import { CustomFetch } from "../productos/customFetch";
 import { Text } from "@chakra-ui/react";
+import { useParams } from "react-router-dom"
 
-const ItemListContainer = (greeting)=>{
+const ItemListContainer = ( greeting )=>{
+
     const  [listaProductos,setListaProductos]=useState([])
     const [loading,setLoading]=useState(true)
+
+    const { categoria }= useParams()
 
     useEffect(()=>{
         setLoading(true)
         CustomFetch(productos)
             .then(res => {
-                setLoading(false)
-                setListaProductos(res)})
-    },[])
+                if (categoria) {
+                    setLoading(false)
+                    setListaProductos(res.filter(prod => prod.categoria === categoria))
+                } else {
+                    setLoading(false)
+                    setListaProductos(res)
+                }
+            })
+    },[categoria])
+
     return(
+
         <div id="landing-message">
             {!loading
             ?
@@ -23,7 +35,6 @@ const ItemListContainer = (greeting)=>{
             :
             <Text>Cargando...</Text>}
             {greeting.greeting}
-            {/* <ItemCount stock={10} initial={0} onAdd=""/> */}
         </div>
         
     )

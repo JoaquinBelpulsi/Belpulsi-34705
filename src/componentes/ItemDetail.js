@@ -1,7 +1,13 @@
-const ItemDetail = ({listProduct}) => {
-    console.log(listProduct);
+import ItemCount from "./ItemCount"
+
+const ItemDetail = (listProduct) => {
+    const {nombre, precio} = listProduct
     return (
-        <></>
+        <>
+            <div>{nombre}</div>
+            <div>{precio}</div>
+            <ItemCount/>
+        </>
     )
 }
 

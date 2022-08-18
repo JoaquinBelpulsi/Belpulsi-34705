@@ -25,10 +25,11 @@ const ItemCount =(props)=>{
     
     return (
         <>
-            <p>hola puto : {contador}</p>
-            <button class="btn" onClick={disminuirContador}>-1</button>
-            <button class="btn" onClick={aumentarContador}>+1</button>
-            <button class="btn" >Añadir al carrito</button>
+            <div>
+                <button class="btn" onClick={disminuirContador}>-1</button>
+                <button class="btn" onClick={aumentarContador}>+1</button>
+                <button class="btn" >Añadir al carrito</button>
+            </div>
         </>
     )
 }

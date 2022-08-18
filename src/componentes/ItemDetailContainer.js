@@ -3,23 +3,34 @@ import { useState, useEffect } from "react";
 import { CustomFetch } from "../productos/customFetch";
 import { productos } from "../productos/productos";
 import { ItemDetail } from "./ItemDetail"
+import { Text } from "@chakra-ui/react"
 
 const ItemDetailContainer = () => {
 
     const [listProduct, setlistProduct] = useState({})
+    const [loading, setLoading] = useState(true)
 
     useEffect (() => {
+        setLoading(true)
         CustomFetch(productos)
-            .then(res => setlistProduct(res.find(Item => Item.id === 1)))
+            .then(res => {
+                setLoading(false)
+                setlistProduct(res.find(Item => Item.id === 1))
+            })
     }, [])
 
     return (
         <>
-            <ItemDetail 
-                listProduct={listProduct}
-            />
+        <div id="landing-message">
+            {!loading
+            ?
+            <ItemDetail listProduct = {listProduct}/>
+            :
+            <Text>Cargando...</Text>}
+        </div>
         </>
     )
 }
 
 export { ItemDetailContainer }
+
