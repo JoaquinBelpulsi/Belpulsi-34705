@@ -1,36 +1,20 @@
-import React from "react";
-import { useState } from "react";
+import {useState} from "react";
+import { HStack, Button, Text } from "@chakra-ui/react";
 
-const ItemCount =(props)=>{
-    const stockValor = (props.stock)
-    const [contador,setContador] = useState(props.inicial)
-    const aumentarContador=()=>{
-        if(contador>=stockValor){    
-            console.log("El contador es o sera mayor que el stock")
-        }
-        else{
-            setContador(contador + 1)
-        }
-    }
+const ItemCount = ({inicial, stock, onAdd}) => {
 
+    const [count, setCount] = useState(inicial)
 
-    const disminuirContador=()=>{
-        if(contador === 0){
-            console.log("El contador sera menor que el stock")
-        }
-        else{
-            setContador(contador - 1)
-        }
-    }
+    const increase = () => count < stock && setCount(count + 1)
+    const decrease = () => count > inicial && setCount(count - 1)
     
     return (
-        <>
-            <div>
-                <button class="btn" onClick={disminuirContador}>-1</button>
-                <button class="btn" onClick={aumentarContador}>+1</button>
-                <button class="btn" >Añadir al carrito</button>
-            </div>
-        </>
+        <HStack>
+            <Button variant='ghost' colorScheme="red" size='sm' onClick={decrease}>-</Button>
+            <Text>{count}</Text>
+            <Button variant='ghost' colorScheme="red" size='sm' onClick={increase}>+</Button>
+            <Button colorScheme="red" size='sm' onClick={onAdd}>Agregar al carrito</Button>
+        </HStack>
     )
 }
-export default ItemCount
+export { ItemCount }

@@ -1,8 +1,15 @@
 import { HStack, Spacer, Link } from "@chakra-ui/react"
-import { NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import { LogoC } from "./Logo"
+import { CartWidget } from "./CartWidget"
+
 function NavBar() {
     return (
         <HStack>
+
+            <LogoC
+                type = "header"
+            />
 
             <NavLink to="/">
                 <span class="material-symbols-outlined">
@@ -10,23 +17,24 @@ function NavBar() {
                 </span>
             </NavLink>
 
-            <Spacer />
+            <HStack>
 
-        <HStack>
+                <NavLink to="categoria/sahumerios">
+                    <Link>Sahumerios</Link>
+                </NavLink>
 
-            <NavLink to="categoria/sahumerios">
-                <Link>Sahumerios</Link>
-            </NavLink>
+                <NavLink to="categoria/velas">
+                    <Link>Velas</Link>
+                </NavLink>
 
-            <NavLink to="categoria/velas">
-                <Link>Velas</Link>
-            </NavLink>
+                <NavLink to="categoria/pastillas">
+                    <Link>Pastillas</Link>
+                </NavLink>
 
-            <NavLink to="categoria/pastillas">
-                <Link>Pastillas</Link>
-            </NavLink>
+                <Spacer/>
 
-        </HStack>
+                <CartWidget/>
+            </HStack>
 
     </HStack>
 )

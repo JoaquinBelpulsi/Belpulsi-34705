@@ -1,16 +1,13 @@
-import Logo from "./multimedia/inicio/logo.png"
+import { NavLink } from "react-router-dom"
 
-const CartWidget = (parametros) => {
-        if(parametros.type === "header"){
-            return (
-            <img src={Logo} alt="Logo" className="h-logo"/>
-            )
-        }
-        else if(parametros.type === "footer"){
-            return (
-            <img src={Logo} alt="Logo" className="f-logo"/>
-            )
-        }
+const CartWidget = () => {
+    return (
+        <NavLink to="/cart" >
+            <span class="material-symbols-outlined">
+                shopping_cart
+            </span>
+        </NavLink>
+    )
 }
 
-export default CartWidget
+export { CartWidget }
